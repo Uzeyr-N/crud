@@ -1,0 +1,40 @@
+<!-- EJS embedded JavaScript -->
+<!--pust html and js in here aswell  -->
+<!-- index.ejs -->
+<!-- 
+keyword 
+- <%= %> Outputs unescaped data (HTML-encoded, so potentially unsafe).
+- <%- %> Outputs unescaped HTML (directly inserts HTML without escaping).
+- <% %>  Used for logic, such as loops or conditionals, without outputting anything.
+- <%# %> This is a comment tag in EJS, which is not rendered in the output. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello WOrld</h1>
+
+    <form action="/qoutes" method="POST">
+      <input type="text" placeholder="name" name="author" />
+      <input type="text" placeholder="qoutes" name="qoutes" />
+      <button type="submit">Submit</button>
+      <button>anohter button</button>
+    </form>
+
+    <h2>qoutes</h2>
+    <ul class="qoutesList">
+        <% for(var i = 0; i < qoutes.length; i++) {%>
+            <li class="qList">
+                <span> <%= qoutes[i].author %> </span>
+                <span><%= qoutes[i].qoutes %> </span>
+            </li>
+        <%  } %>
+    </ul>
+    <!-- <%= qoutes %> -->
+  </body>
+</html>

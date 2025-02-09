@@ -64,9 +64,36 @@ async function Testconnect(mongoString) {
       console.log("NO POSTSection");
     }
 
-    app.put('/qoutes',(req,res)=> {
-        console.log(req.body)
-    })
+    app.put('/qoutes', async (req, res) => {
+      try {
+          const result = await qoutesCollection.findOneAndUpdate(
+              { author: 'me' },
+                {
+                    $set: {
+                        author: req.body.author,
+                        qoutes: req.body.qoutes
+                    }
+                },
+              {
+                  upsert: true // update insert
+              }
+          );
+          
+          if (!result) {
+              return res.status(404).json({ message: 'Quote not found' });
+          }
+          
+          // console.log(result);
+          res.status(200).json(result);
+      } catch (error) {
+          console.error('Error updating quote:', error);
+          res.status(500).json({ error: 'An error occurred while updating the quote' });
+      }
+  });
+
+
+
+
 
     app.listen(8000, () => {
       // Listen on port 3000

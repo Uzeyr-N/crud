@@ -9,7 +9,7 @@ updateButton.addEventListener('click', _ => {
         headers: {'content-type':'application/json'},
         body: JSON.stringify({
             author: 'me',
-            qoutes: 'yes it updated'
+            qoutes: 'i have evoleved'
         })
 
     })

@@ -30,11 +30,20 @@ keyword
     <ul class="qoutesList">
         <% for(var i = 0; i < qoutes.length; i++) {%>
             <li class="qList">
-                <span> <%= qoutes[i].author %> </span>
+                <span> <%= qoutes[i].author %> </span>:
                 <span><%= qoutes[i].qoutes %> </span>
             </li>
         <%  } %>
     </ul>
+
+    <div>
+      <h2>Title</h2>
+      <p>replace this with the pdate button</p>
+      <button id="update-button">change the qoute</button>
+    </div>
+
+
     <!-- <%= qoutes %> -->
+     <script src="/main.js"></script>
   </body>
 </html>

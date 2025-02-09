@@ -64,7 +64,7 @@ async function Testconnect(mongoString) {
       console.log("NO POSTSection");
     }
 
-    app.put('qoutes',(req,res)=> {
+    app.put('/qoutes',(req,res)=> {
         console.log(req.body)
     })
 

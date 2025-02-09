@@ -4,7 +4,7 @@
 const updateButton = document.querySelector('#update-button')
 
 updateButton.addEventListener('click', _ => {
-    fetch('/quotes', {
+    fetch('/qoutes', {
         method: 'put',
         headers: {'content-type':'application/json'},
         body: JSON.stringify({

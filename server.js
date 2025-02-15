@@ -56,8 +56,7 @@ async function Testconnect(mongoString) {
             res.redirect("/");
           })
           .catch(
-            (error) => console.error(error),
-            console.log("declined quote l51")
+            (error) => console.error(error)
           );
       });
     } catch (error) {
@@ -101,7 +100,7 @@ async function Testconnect(mongoString) {
     });
     return client;
   } catch (err) {
-    console.error("Database connection failed:", err);
+    console.error("Server conntcion not established:", err);
   }
 }
 
